@@ -14,7 +14,8 @@ class App extends React.Component {
       objects: [
         { x: 350, y: 155, width: 300, name: 'table2' },
         { x: 430, y: 120, width: 90, name: 'imac' },
-        { x: 490, y: 230, width: 90, name: 'keyboard' }
+        { x: 490, y: 230, width: 90, name: 'keyboard' },
+        { x: 534, y: 257, width: 120, name: 'officeChair2' }
       ]
     }
   }
