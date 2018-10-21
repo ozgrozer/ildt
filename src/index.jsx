@@ -45,7 +45,7 @@ class App extends React.Component {
                   key={key}
                   alt={objectName}
                   title={objectName}
-                  src={`objects/${objectName}.png`}
+                  src={`objects/small/${objectName}.png`}
                   onClick={this.addImage.bind(this, { objectName })} />
               )
             })
@@ -62,7 +62,7 @@ class App extends React.Component {
                   minHeight={10}
                   lockAspectRatio
                   default={{ x: object.x, y: object.y, width: object.width }}>
-                  <img src={`objects/${object.name}.png`} alt={object.name} draggable='false' />
+                  <img src={`objects/big/${object.name}.png`} alt={object.name} draggable='false' />
                 </Rnd>
               )
             })
