@@ -1,25 +1,67 @@
-body {
-  background-color: #fff;
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
 }
 
-.layout {
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  margin-top: -250px;
-  margin-left: -500px;
-  background-color: #eee;
-  width: 1000px !important;
-  height: 500px !important;
+body {
+  padding: 40px 0;
+  font-family: 'Raleway', sans-serif;
+}
 
-  .react-draggable {
-    border: 1px solid transparent;
-    &:hover, &:active {
-      border: 1px solid darken(#eee, 20%);
-    }
+$objectsAndSceneHeight: 562px;
+$objectsWidth: 200px;
+$sceneWidth: 1000px;
+$padding: 40px;
+$containerWidth: $objectsWidth + $sceneWidth + $padding;
+$borderRadius: 4px;
+$objectsBackgroundColor: lighten(#dfe6e9, 4%);
+$sceneBackgroundColor: #dfe6e9;
+
+.container {
+  margin: auto;
+  width: $containerWidth;
+
+  .objects {
+    float: left;
+    padding: $padding;
+    text-align: center;
+    width: $objectsWidth;
+    border-radius: $borderRadius;
+    height: $objectsAndSceneHeight;
+    background-color: lighten(#dfe6e9, 4%);
 
     img {
-      width: 100%;
+      margin-top: $padding;
+      max-width: 120px;
+      max-height: 100px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .scene {
+    float: left;
+    width: $sceneWidth;
+    margin-left: $padding;
+    background-color: #dfe6e9;
+    border-radius: $borderRadius;
+    height: $objectsAndSceneHeight;
+
+    .react-draggable {
+      border-radius: $borderRadius;
+      border: 1px solid transparent;
+      &:hover, &:active {
+        border: 1px solid darken(#dfe6e9, 20%);
+      }
+
+      img {
+        width: 100%;
+      }
     }
   }
 }

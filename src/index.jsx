@@ -5,31 +5,28 @@ import { Rnd } from 'react-rnd'
 import './style.scss'
 
 class App extends React.Component {
-  constructor () {
-    super()
-
-    this.state = {
-      width: 140,
-      height: 100,
-      x: 100,
-      y: 100
-    }
-  }
-
   render () {
     return (
-      <div className='layout'>
-        <Rnd default={{ x: 350, y: 125, width: 300 }} minWidth={10} minHeight={10} lockAspectRatio>
-          <img src='/objects/table2.png' alt='' draggable='false' />
-        </Rnd>
+      <div className='container'>
+        <div className='objects'>
+          <img src='/objects/table2.png' alt='' />
+          <img src='/objects/imac.png' alt='' />
+          <img src='/objects/keyboard.png' alt='' />
+        </div>
 
-        <Rnd default={{ x: 430, y: 90, width: 90 }} minWidth={10} minHeight={10} lockAspectRatio>
-          <img src='/objects/imac.png' alt='' draggable='false' />
-        </Rnd>
+        <div className='scene'>
+          <Rnd default={{ x: 350, y: 155, width: 300 }} minWidth={10} minHeight={10} lockAspectRatio>
+            <img src='/objects/table2.png' alt='' draggable='false' />
+          </Rnd>
 
-        <Rnd default={{ x: 490, y: 200, width: 90 }} minWidth={10} minHeight={10} lockAspectRatio>
-          <img src='/objects/keyboard.png' alt='' draggable='false' />
-        </Rnd>
+          <Rnd default={{ x: 430, y: 120, width: 90 }} minWidth={10} minHeight={10} lockAspectRatio>
+            <img src='/objects/imac.png' alt='' draggable='false' />
+          </Rnd>
+
+          <Rnd default={{ x: 490, y: 230, width: 90 }} minWidth={10} minHeight={10} lockAspectRatio>
+            <img src='/objects/keyboard.png' alt='' draggable='false' />
+          </Rnd>
+        </div>
       </div>
     )
   }
