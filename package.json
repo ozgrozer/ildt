@@ -1,7 +1,8 @@
 {
   "name": "ildt",
   "scripts": {
-    "start": "parcel ./src/index.html --out-dir ./docs --public-url ./ --port 1133",
+    "start": "parcel ./src/index.html --out-dir ./docs --public-url / --port 1133",
+    "prebuild": "cd docs && pwd && find . -maxdepth 1 ! -name 'objects' -type f -exec rm -rf {} +",
     "build": "parcel build ./src/index.html --out-dir ./docs --public-url ./ --no-source-maps"
   },
   "license": "MIT",
