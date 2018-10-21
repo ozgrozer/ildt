@@ -37,9 +37,15 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
     background-color: $objectsBackgroundColor;
 
     img {
-      margin-top: $padding;
-      max-width: 120px;
+      cursor: pointer;
       max-height: 100px;
+      margin-top: $padding;
+      max-width: $objectsWidth - ($padding * 2);
+      border-radius: $borderRadius;
+      border: 1px solid transparent;
+      &:hover, &:active {
+        border: 1px solid darken($sceneBackgroundColor, 20%);
+      }
       &:first-child {
         margin-top: 0;
       }
@@ -67,16 +73,19 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
     }
   }
 
-  .footer {
+  .footer1, .footer2 {
     color: #555;
     float: left;
-    width: 100%;
     padding: 10px 0;
     line-height: 25px;
     text-align: center;
     margin-top: $padding;
     border-radius: $borderRadius;
+    width: ($containerWidth - $padding) / 2;
     background-color: $footerBackgroundColor;
+    &.footer2 {
+      margin-left: $padding;
+    }
 
     a {
       color: #555;
