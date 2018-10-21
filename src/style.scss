@@ -18,22 +18,23 @@ $sceneWidth: 1000px;
 $padding: 40px;
 $containerWidth: $objectsWidth + $sceneWidth + $padding;
 $borderRadius: 4px;
-$objectsBackgroundColor: lighten(#dfe6e9, 4%);
-$sceneBackgroundColor: #dfe6e9;
+$objectsBackgroundColor: #ebeff1;
+$sceneBackgroundColor: darken($objectsBackgroundColor, 0%);
+$footerBackgroundColor: darken($objectsBackgroundColor, 0%);
 
 .container {
   margin: auto;
   width: $containerWidth;
 
   .objects {
-    float: left;
     overflow-y: auto;
     padding: $padding;
     text-align: center;
     width: $objectsWidth;
+    display: inline-block;
     border-radius: $borderRadius;
     height: $objectsAndSceneHeight;
-    background-color: lighten(#dfe6e9, 4%);
+    background-color: $objectsBackgroundColor;
 
     img {
       margin-top: $padding;
@@ -46,22 +47,42 @@ $sceneBackgroundColor: #dfe6e9;
   }
 
   .scene {
-    float: left;
     width: $sceneWidth;
     margin-left: $padding;
-    background-color: #dfe6e9;
+    display: inline-block;
     border-radius: $borderRadius;
     height: $objectsAndSceneHeight;
+    background-color: $sceneBackgroundColor;
 
     .react-draggable {
       border-radius: $borderRadius;
       border: 1px solid transparent;
       &:hover, &:active {
-        border: 1px solid darken(#dfe6e9, 20%);
+        border: 1px solid darken($sceneBackgroundColor, 20%);
       }
 
       img {
         width: 100%;
+      }
+    }
+  }
+
+  .footer {
+    color: #555;
+    width: 100%;
+    padding: 10px 0;
+    line-height: 25px;
+    text-align: center;
+    margin-top: $padding;
+    border-radius: $borderRadius;
+    background-color: $footerBackgroundColor;
+
+    a {
+      color: #555;
+      font-weight: 500;
+      text-decoration: none;
+      &:hover {
+        color: #111;
       }
     }
   }

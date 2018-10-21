@@ -32,6 +32,11 @@ class App extends React.Component {
             <img src='objects/keyboard.png' alt='' draggable='false' />
           </Rnd>
         </div>
+
+        <div className='footer'>
+          Original images: <a href='https://isometriclove.com/' target='_blank'>isometriclove.com</a><br />
+          Source of this tool: <a href='https://github.com/ozgrozer/ildt' target='_blank'>github.com/ozgrozer/ildt</a><br />
+        </div>
       </div>
     )
   }
