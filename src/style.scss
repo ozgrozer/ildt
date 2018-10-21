@@ -66,6 +66,30 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
       border: 1px solid transparent;
       &:hover, &:active {
         border: 1px solid darken($sceneBackgroundColor, 20%);
+
+        .remove {
+          top: 0;
+          right: 0;
+          color: #fff;
+          width: 20px;
+          height: 20px;
+          display: block;
+          cursor: pointer;
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 20px;
+          text-align: center;
+          position: absolute;
+          background-color: #dc3545;
+          border-radius: $borderRadius;
+          &:hover, &:active {
+            background-color: darken(#dc3545, 10%);
+          }
+        }
+      }
+
+      .remove {
+        display: none;
       }
 
       img {
@@ -88,7 +112,7 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
       text-transform: uppercase;
       border-radius: $borderRadius;
       &:hover, &:active {
-        background-color: #0069d8;
+        background-color: darken(#037bff, 10%);
       }
     }
   }

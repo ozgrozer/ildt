@@ -26,6 +26,12 @@ class App extends React.Component {
     this.setState({ objects })
   }
 
+  removeImage (opts) {
+    const objects = this.state.objects
+    delete objects[opts.key]
+    this.setState({ objects })
+  }
+
   saveImage () {
     html2canvas(document.getElementsByClassName('scene')[0]).then(function (canvas) {
       const a = document.createElement('a')
@@ -64,6 +70,8 @@ class App extends React.Component {
                   lockAspectRatio
                   default={{ x: object.x, y: object.y, width: object.width }}>
                   <img src={`objects/big/${object.name}.png`} alt={object.name} draggable='false' />
+
+                  <div className='remove' onClick={this.removeImage.bind(this, { key })}>x</div>
                 </Rnd>
               )
             })
