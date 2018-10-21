@@ -3,3 +3,7 @@
 [https://ozgrozer.github.io/ildt/](https://ozgrozer.github.io/ildt/)
 
 ![](preview.jpg)
+
+## License
+
+[MIT](license)
