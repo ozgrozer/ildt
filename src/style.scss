@@ -55,6 +55,7 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
   .scene {
     float: left;
     width: $sceneWidth;
+    position: relative;
     margin-left: $padding;
     border-radius: $borderRadius;
     height: $objectsAndSceneHeight;
@@ -71,12 +72,32 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
         width: 100%;
       }
     }
+
+    #saveImage {
+      right: 0px;
+      color: #fff;
+      height: 30px;
+      border: none;
+      bottom: -35px;
+      cursor: pointer;
+      padding: 0 20px;
+      font-weight: 500;
+      line-height: 30px;
+      position: absolute;
+      background-color: #037bff;
+      text-transform: uppercase;
+      border-radius: $borderRadius;
+      &:hover, &:active {
+        background-color: #0069d8;
+      }
+    }
   }
 
   .footer1, .footer2 {
     color: #555;
     float: left;
     padding: 10px 0;
+    font-size: 14px;
     line-height: 25px;
     text-align: center;
     margin-top: $padding;

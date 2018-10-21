@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Rnd } from 'react-rnd'
+import html2canvas from 'html2canvas'
 
 import './style.scss'
 import objectsList from './objectsList'
@@ -24,6 +25,15 @@ class App extends React.Component {
     this.setState({ objects })
   }
 
+  saveImage () {
+    html2canvas(document.getElementsByClassName('scene')[0]).then(function (canvas) {
+      const a = document.createElement('a')
+      a.href = canvas.toDataURL('image/jpg').replace('image/jpg', 'image/octet-stream')
+      a.download = 'isometric.jpg'
+      a.click()
+    })
+  }
+
   render () {
     return (
       <div className='container'>
@@ -34,6 +44,7 @@ class App extends React.Component {
                 <img
                   key={key}
                   alt={objectName}
+                  title={objectName}
                   src={`objects/${objectName}.png`}
                   onClick={this.addImage.bind(this, { objectName })} />
               )
@@ -56,12 +67,14 @@ class App extends React.Component {
               )
             })
           }
+
+          <button id='saveImage' onClick={this.saveImage.bind(this)}>Save</button>
         </div>
 
         <div className='footer1'>
           Click on the images you want to add to the scene from the left side.
           <br />
-          On the right side: move, resize your images and make your design.
+          Add, move, resize some images to make your design, then hit the save button.
         </div>
 
         <div className='footer2'>
