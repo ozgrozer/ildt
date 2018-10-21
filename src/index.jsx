@@ -83,7 +83,7 @@ class App extends React.Component {
         <div className='footer1'>
           Click on the objects you want to add to the scene from the left side.
           <br />
-          Move/resize/remove your objets to make your design, then hit the save button.
+          Move/resize/remove your objects to make your design, then hit the save button.
         </div>
 
         <div className='footer2'>
