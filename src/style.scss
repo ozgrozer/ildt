@@ -27,6 +27,7 @@ $sceneBackgroundColor: #dfe6e9;
 
   .objects {
     float: left;
+    overflow-y: auto;
     padding: $padding;
     text-align: center;
     width: $objectsWidth;

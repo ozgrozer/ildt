@@ -3,15 +3,20 @@ import ReactDOM from 'react-dom'
 import { Rnd } from 'react-rnd'
 
 import './style.scss'
+import objectsList from './objectsList'
 
 class App extends React.Component {
   render () {
     return (
       <div className='container'>
         <div className='objects'>
-          <img src='/objects/table2.png' alt='' />
-          <img src='/objects/imac.png' alt='' />
-          <img src='/objects/keyboard.png' alt='' />
+          {
+            objectsList.map((objectName, key) => {
+              return (
+                <img key={key} src={`/objects/${objectName}.png`} alt={objectName} />
+              )
+            })
+          }
         </div>
 
         <div className='scene'>
