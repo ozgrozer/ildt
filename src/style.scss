@@ -27,11 +27,11 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
   width: $containerWidth;
 
   .objects {
+    float: left;
     overflow-y: auto;
     padding: $padding;
     text-align: center;
     width: $objectsWidth;
-    display: inline-block;
     border-radius: $borderRadius;
     height: $objectsAndSceneHeight;
     background-color: $objectsBackgroundColor;
@@ -47,9 +47,9 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
   }
 
   .scene {
+    float: left;
     width: $sceneWidth;
     margin-left: $padding;
-    display: inline-block;
     border-radius: $borderRadius;
     height: $objectsAndSceneHeight;
     background-color: $sceneBackgroundColor;
@@ -69,6 +69,7 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
 
   .footer {
     color: #555;
+    float: left;
     width: 100%;
     padding: 10px 0;
     line-height: 25px;
@@ -82,7 +83,8 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
       font-weight: 500;
       text-decoration: none;
       &:hover {
-        color: #111;
+        color: darken(#555, 30%);
+        border-bottom: 1px solid darken(#555, 30%);
       }
     }
   }
