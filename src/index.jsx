@@ -19,18 +19,16 @@ class App extends React.Component {
   render () {
     return (
       <div className='layout'>
-        <Rnd
-          default={{
-            x: 150,
-            y: 205,
-            width: 100,
-            height: 100
-          }}
-          minWidth={10}
-          minHeight={10}
-          lockAspectRatio
-        >
-          test
+        <Rnd default={{ x: 350, y: 125, width: 300 }} minWidth={10} minHeight={10} lockAspectRatio>
+          <img src='/objects/table2.png' alt='' draggable='false' />
+        </Rnd>
+
+        <Rnd default={{ x: 430, y: 90, width: 90 }} minWidth={10} minHeight={10} lockAspectRatio>
+          <img src='/objects/imac.png' alt='' draggable='false' />
+        </Rnd>
+
+        <Rnd default={{ x: 490, y: 200, width: 90 }} minWidth={10} minHeight={10} lockAspectRatio>
+          <img src='/objects/keyboard.png' alt='' draggable='false' />
         </Rnd>
       </div>
     )
