@@ -6,6 +6,8 @@ import html2canvas from 'html2canvas'
 import './style.scss'
 import objectsList from './objectsList'
 
+console.log('1')
+
 class App extends React.Component {
   constructor () {
     super()
