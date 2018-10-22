@@ -16,7 +16,8 @@ class App extends React.Component {
         { x: 430, y: 120, width: 90, name: 'imac' },
         { x: 490, y: 230, width: 90, name: 'keyboard' },
         { x: 534, y: 257, width: 120, name: 'officeChair2' }
-      ]
+      ],
+      objectsList
     }
   }
 
@@ -41,25 +42,51 @@ class App extends React.Component {
     })
   }
 
+  search (e) {
+    const searchTerm = e.target.value
+
+    let filteredResults = []
+
+    if (searchTerm) {
+      objectsList.map((object) => {
+        if (object.toLowerCase().includes(searchTerm.toLowerCase())) {
+          filteredResults.push(object)
+        }
+      })
+    } else {
+      filteredResults = objectsList
+    }
+
+    this.setState({
+      objectsList: filteredResults
+    })
+  }
+
   render () {
     return (
-      <div className='container'>
-        <div className='objects'>
-          {
-            objectsList.map((objectName, key) => {
-              return (
-                <img
-                  key={key}
-                  alt={objectName}
-                  title={objectName}
-                  src={`objects/small/${objectName}.png`}
-                  onClick={this.addImage.bind(this, { objectName })} />
-              )
-            })
-          }
+      <div id='container'>
+        <div id='objects'>
+          <div id='searchWrapper'>
+            <input type='text' id='search' placeholder='Search' onChange={this.search.bind(this)} />
+          </div>
+
+          <div id='list'>
+            {
+              this.state.objectsList.map((objectName, key) => {
+                return (
+                  <img
+                    key={key}
+                    alt={objectName}
+                    title={objectName}
+                    src={`objects/small/${objectName}.png`}
+                    onClick={this.addImage.bind(this, { objectName })} />
+                )
+              })
+            }
+          </div>
         </div>
 
-        <div className='scene'>
+        <div id='scene'>
           {
             this.state.objects.map((object, key) => {
               return (
@@ -80,7 +107,7 @@ class App extends React.Component {
           <button id='saveImage' onClick={this.saveImage.bind(this)}>Save</button>
         </div>
 
-        <div className='footer1'>
+        <div id='footer1'>
           Click on the objects you want to add to the scene from the left side.
           <br />
           Move/resize/remove your objects to make your design.
@@ -88,7 +115,7 @@ class App extends React.Component {
           Hit the save button to save your image.
         </div>
 
-        <div className='footer2'>
+        <div id='footer2'>
           Source of this tool: <a href='https://github.com/ozgrozer/ildt' target='_blank'>github.com/ozgrozer/ildt</a>
           <br />
           Original images: <a href='https://isometriclove.com/' target='_blank'>isometriclove.com</a>

@@ -9,6 +9,9 @@
 
 body {
   padding: 40px 0;
+}
+
+body, input {
   font-family: 'Raleway', sans-serif;
 }
 
@@ -22,37 +25,55 @@ $objectsBackgroundColor: #ebeff1;
 $sceneBackgroundColor: darken($objectsBackgroundColor, 0%);
 $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
 
-.container {
+#container {
   margin: auto;
   width: $containerWidth;
 
-  .objects {
+  #objects {
     float: left;
-    overflow-y: auto;
-    padding: $padding;
-    text-align: center;
     width: $objectsWidth;
     border-radius: $borderRadius;
     height: $objectsAndSceneHeight;
     background-color: $objectsBackgroundColor;
 
-    img {
-      cursor: pointer;
-      max-height: 100px;
-      margin-top: $padding;
-      max-width: $objectsWidth - ($padding * 2);
-      border-radius: $borderRadius;
-      border: 1px solid transparent;
-      &:hover, &:active {
-        border: 1px solid darken($sceneBackgroundColor, 20%);
+    #searchWrapper {
+      padding: 5px;
+      height: 40px;
+
+      #search {
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 10px;
+        outline: none;
+        border-radius: $borderRadius;
       }
-      &:first-child {
-        margin-top: 0;
+    }
+
+    #list {
+      overflow-y: auto;
+      padding: $padding;
+      text-align: center;
+      height: calc(100% - 40px);
+
+      img {
+        cursor: pointer;
+        max-height: 100px;
+        margin-top: $padding;
+        max-width: $objectsWidth - ($padding * 2);
+        border-radius: $borderRadius;
+        border: 1px solid transparent;
+        &:hover, &:active {
+          border: 1px solid darken($sceneBackgroundColor, 20%);
+        }
+        &:first-child {
+          margin-top: 0;
+        }
       }
     }
   }
 
-  .scene {
+  #scene {
     float: left;
     width: $sceneWidth;
     position: relative;
@@ -117,7 +138,7 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
     }
   }
 
-  .footer1, .footer2 {
+  #footer1, #footer2 {
     color: #555;
     float: left;
     padding: 10px 0;
@@ -128,7 +149,7 @@ $footerBackgroundColor: darken($objectsBackgroundColor, 0%);
     border-radius: $borderRadius;
     width: ($containerWidth - $padding) / 2;
     background-color: $footerBackgroundColor;
-    &.footer2 {
+    &#footer2 {
       margin-left: $padding;
     }
 
